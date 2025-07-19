@@ -9,14 +9,19 @@ DATABASE_URL = (
     f"@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
 )
 
-engine = create_async_engine(DATABASE_URL, echo=True)
+# Create engine with max pool size from .env
+engine = create_async_engine(
+    DATABASE_URL,
+    echo=True,
+    pool_size=settings.DB_CONNLMT,
+    max_overflow=0,
+)
 
 AsyncSessionLocal = sessionmaker(
     bind=engine, class_=AsyncSession, expire_on_commit=False
 )
 
-# Atomic DB session
 async def get_db():
     async with AsyncSessionLocal() as session:
-        async with session.begin():  # ← Transaction starts here
-            yield session  # ← Everything in your route runs inside this
+        async with session.begin():
+            yield session

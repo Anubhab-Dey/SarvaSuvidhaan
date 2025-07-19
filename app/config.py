@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_NAME: str
+    DB_CONNLMT: int
 
     class Config:
         env_file = ".env"
