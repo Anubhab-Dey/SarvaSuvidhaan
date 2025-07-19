@@ -11,12 +11,12 @@ DATABASE_URL = (
 
 engine = create_async_engine(DATABASE_URL, echo=True)
 
-# Session factory
 AsyncSessionLocal = sessionmaker(
     bind=engine, class_=AsyncSession, expire_on_commit=False
 )
 
-# Dependency to get a session
+# Atomic DB session
 async def get_db():
     async with AsyncSessionLocal() as session:
-        yield session
+        async with session.begin():  # ← Transaction starts here
+            yield session  # ← Everything in your route runs inside this
