@@ -27,7 +27,7 @@ class WheelSpecificationFormSchema(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "formNumber": "WHEEL-2025-001",
                 "submittedBy": "user_id_123",

@@ -1,7 +1,7 @@
 # This file enables you to use ENV VARS with an abstracted out `settings` method from a `Settings` class reducing some boilerplate.
 
 
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
