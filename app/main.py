@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import post_wheel_specification_form
+from routes import post_wheel_specification_form, get_wheel_specification_form
 
 app = FastAPI(
     title="ICF Forms API",
@@ -25,3 +25,4 @@ app.add_middleware(
 
 # Register routes
 app.include_router(post_wheel_specification_form.router)
+app.include_router(get_wheel_specification_form.router)
