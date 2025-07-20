@@ -7,11 +7,22 @@ from datetime import date
 
 
 class WheelSpecificationFilterParams(BaseModel):
-    formNumber: Optional[str] = Field(None, example="WHEEL-2025-001")
-    submittedBy: Optional[str] = Field(None, example="user_id_123")
-    submittedDate: Optional[str] = Field(
-        None, example="2025-07-03", description="Must be in YYYY-MM-DD format"
+    formNumber: Optional[str] = Field(
+        None,
+        example="WHEEL-2025-001",
+        description="Unique identifier of the wheel form"
     )
+    submittedBy: Optional[str] = Field(
+        None,
+        example="user_id_123",
+        description="User ID who submitted the form"
+    )
+    submittedDate: Optional[str] = Field(
+        None,
+        example="2025-07-03",
+        description="Date of submission in YYYY-MM-DD format"
+    )
+
 
 
 class WheelSpecificationFormResponse(BaseModel):

@@ -6,10 +6,25 @@ from typing import Dict
 from datetime import date
 
 class WheelSpecificationFormSchema(BaseModel):
-    formNumber: str = Field(..., example="WHEEL-2025-001")
-    submittedBy: str = Field(..., example="user_id_123")
-    submittedDate: date = Field(..., example="2025-07-03")
-    fields: Dict[str, str]
+    formNumber: str = Field(
+        ...,
+        example="WHEEL-2025-001",
+        description="Unique identifier for this wheel specification form"
+    )
+    submittedBy: str = Field(
+        ...,
+        example="user_id_123",
+        description="User ID of the person submitting the form"
+    )
+    submittedDate: date = Field(
+        ...,
+        example="2025-07-03",
+        description="Date the form is submitted (YYYY-MM-DD)"
+    )
+    fields: Dict[str, str] = Field(
+        ...,
+        description="Key-value mapping of wheel measurements and spec values. All values must be strings."
+    )
 
     class Config:
         schema_extra = {
