@@ -202,7 +202,7 @@ Fetch submitted forms using filters.
 ## 📊 Testing
 
 * Swagger: [http://localhost:8000/docs](http://localhost:8000/docs)
-* Postman: `KPA_form data.postman_collection.json` (In the repo)
+* Postman: `KPA_form data.postman_collection.json` (In the repo.  NOTE: The domains of the requests are modified for 'localhost:8000' for local testing, rest of the URL is unchanged.)
 
 ---
 
