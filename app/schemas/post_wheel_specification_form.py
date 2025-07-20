@@ -16,7 +16,7 @@ class WheelSpecificationFormSchema(BaseModel):
         example="user_id_123",
         description="User ID of the person submitting the form"
     )
-    submittedDate: date = Field(
+    submittedDate: str = Field(
         ...,
         example="2025-07-03",
         description="Date the form is submitted (YYYY-MM-DD)"
