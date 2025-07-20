@@ -1,6 +1,6 @@
-# 🚆 ICF Wheel Specifications API
+# 🚆 Wheel Specifications API
 
-This project is a backend service built with **FastAPI**, **Python 3.13.5**, and **PostgreSQL**, enabling the submission and retrieval of ICF Wheel Specification forms. It offers full Swagger/OpenAPI docs, input validation, and async database support.
+This project is a backend service built with **FastAPI**, **Python 3.13.5**, and **PostgreSQL**, enabling the submission and retrieval of Wheel Specification forms. It offers full Swagger/OpenAPI docs, input validation, and async database support.
 
 ---
 
