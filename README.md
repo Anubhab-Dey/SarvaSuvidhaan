@@ -57,8 +57,8 @@ This project is a backend service built with **FastAPI**, **Python 3.13.5**, and
 ### 1. 🔽 Clone Repository
 
 ```powershell
-git clone <your-repo-url>
-cd <repo-folder>
+git clone https://github.com/Anubhab-Dey/SarvaSuvidhaan.git
+cd SarvaSuvidhaan
 ```
 
 ### 2. ⚗️ Set Up Virtual Environment
