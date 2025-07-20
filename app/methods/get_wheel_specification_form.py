@@ -4,7 +4,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import and_
-from models.wheel_specification_form import WheelSpecificationForm
+from app.models.wheel_specification_form import WheelSpecificationForm
 from fastapi import HTTPException
 from datetime import datetime
 

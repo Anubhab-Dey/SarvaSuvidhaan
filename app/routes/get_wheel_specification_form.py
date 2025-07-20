@@ -4,11 +4,11 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
-from schemas.get_wheel_specification_form import (
+from app.schemas.get_wheel_specification_form import (
     WheelSpecificationFilterParams,
     WheelSpecificationGetResponse
 )
-from methods.get_wheel_specification_form import fetch_filtered_wheel_forms
+from app.methods.get_wheel_specification_form import fetch_filtered_wheel_forms
 
 router = APIRouter()
 

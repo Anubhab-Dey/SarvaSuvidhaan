@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
-from models.wheel_specification_form import WheelSpecificationForm
+from app.models.wheel_specification_form import WheelSpecificationForm
 from fastapi import HTTPException
 from sqlalchemy.future import select
 from datetime import datetime

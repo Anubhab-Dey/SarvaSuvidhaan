@@ -3,8 +3,8 @@
 
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from schemas.post_wheel_specification_form import WheelSpecificationFormSchema
-from methods.post_wheel_specification_form import create_wheel_spec_form
+from app.schemas.post_wheel_specification_form import WheelSpecificationFormSchema
+from app.methods.post_wheel_specification_form import create_wheel_spec_form
 from app.database import get_db
 
 router = APIRouter()

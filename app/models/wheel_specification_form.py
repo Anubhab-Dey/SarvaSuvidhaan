@@ -5,7 +5,7 @@
 from sqlalchemy import Column, String, Date, JSON
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.ext.declarative import declarative_base
-import uuid
+
 
 Base = declarative_base()
 
