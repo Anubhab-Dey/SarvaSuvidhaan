@@ -36,3 +36,24 @@ class WheelSpecificationGetResponse(BaseModel):
     success: bool = Field(..., example=True)
     message: str = Field(..., example="Filtered wheel specification forms fetched successfully.")
     data: List[WheelSpecificationFormResponse]
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "success": True,
+                "message": "Filtered wheel specification forms fetched successfully.",
+                "data": [
+                    {
+                        "formNumber": "WHEEL-2025-001",
+                        "submittedBy": "user_id_123",
+                        "submittedDate": "2025-07-03",
+                        "fields": {
+                            "treadDiameterNew": "915 (900-1000)",
+                            "lastShopIssueSize": "837 (800-900)",
+                            "condemningDia": "825 (800-900)",
+                            "wheelGauge": "1600 (+2,-1)"
+                        }
+                    }
+                ]
+            }
+        }
