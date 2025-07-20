@@ -1,28 +1,22 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+from app.utils.dbutils import create_all_tables
 from app.routes import post_wheel_specification_form, get_wheel_specification_form
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await create_all_tables()
+    yield
 
 app = FastAPI(
     title="ICF Forms API",
-    description="API for submitting and managing ICF Wheel Specification forms.",
+    description="API for managing digital ICF Wheel & Bogie forms.",
     version="1.0.0",
-    contact={
-        "name": "SarvaSuvidhaa KPA Team",
-        "email": "contact@suvidhaen.com"
-    },
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
+    lifespan=lifespan
 )
 
-# CORS setup
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Register routes
+# Register routers
 app.include_router(post_wheel_specification_form.router)
 app.include_router(get_wheel_specification_form.router)
